@@ -30,7 +30,6 @@ export default class CreatePost extends React.Component {
     render(){
         return (
 
-<div className={classNames(bootstrap["modal"], bootstrap["fade"], "modal")} id="addModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div className={classNames(bootstrap["modal-dialog"],'modal-dialog')}>
     <div className={bootstrap['modal-content']}>
         <div className={classNames(bootstrap["modal-header"], bootstrap["bg-primary"])}><h4>New Post</h4></div>
@@ -44,7 +43,6 @@ export default class CreatePost extends React.Component {
             <button onClick={this.doAdd} className={classNames(bootstrap['btn'], bootstrap['btn-primary'])} data-dismiss="modal">Add</button>                     
         </div>
     </div>
-</div>
 </div>
 
         );

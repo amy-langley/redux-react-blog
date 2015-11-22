@@ -14,12 +14,7 @@ export default class BlogPostList extends React.Component {
         var removePost=this.props.removePost;
         return (
             <div>
-                <button className={classNames(bootstrap.btn,bootstrap['btn-primary'],bootstrap['pull-right'])} 
-                    data-toggle="modal" data-target="#addModal">
-                    <span className={classNames(bootstrap['glyphicon'], bootstrap['glyphicon-plus'])} />&nbsp;
-                    <span>New Post</span>
-                </button>
-                
+            
                 <h1>Posts</h1>
 
                 {this.props.posts.map(function(o,i){
