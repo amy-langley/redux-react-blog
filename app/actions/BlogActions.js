@@ -1,6 +1,8 @@
+import * as types from '../constants/ActionTypes';
+
 export function createPost(title, contents) {
   return {
-    type: 'CREATE_POST',
+    type: types.CREATE_POST,
     title,
     contents
   }
@@ -8,7 +10,7 @@ export function createPost(title, contents) {
 
 export function deletePost(id) {
 	return {
-		type: 'DELETE_POST',
+		type: types.DELETE_POST,
 		id
 	}
 }

@@ -4,6 +4,8 @@ import React from 'react';
 import styles from '../App.css';
 import BlogPostList from './BlogPostList.jsx'
 import CreatePost from './CreatePost.jsx'
+import { bindActionCreators } from 'redux';
+import * as BlogActions from '../actions/BlogActions';
 import { connect } from 'react-redux'
 
 @connect(state=>({blog: state.blog}))
@@ -31,11 +33,11 @@ export default class BlogApp extends React.Component {
     }
 
     render(){
-        var posts = this.props.blog
+        const { blog, dispatch } = this.props;
         return (
             <div>
-                <BlogPostList posts={posts} removePost={this.removePost} />
-                <CreatePost onAdd={this.addNewPost}/>
+                <BlogPostList posts={blog} removePost={this.removePost} {...bindActionCreators(BlogActions, dispatch)} />
+                <CreatePost onAdd={this.addNewPost} {...bindActionCreators(BlogActions, dispatch)} />
             </div>
         );
     }

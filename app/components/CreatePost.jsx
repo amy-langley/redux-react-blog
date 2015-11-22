@@ -7,8 +7,8 @@ export default class CreatePost extends React.Component {
     constructor(props) {
         super(props);
         this.state = { title: '', contents: '' };
-        this.handleChange = this.handleChange.bind(this);
-        this.doAdd = this.doAdd.bind(this);
+        this.handleChange = this.handleChange.bind(this)
+        this.addPost = this.addPost.bind(this)
     }
 
     handleChange(e){
@@ -22,8 +22,8 @@ export default class CreatePost extends React.Component {
         this.setState({title: '', contents: ''});
     }
 
-    doAdd(e){
-        this.props.onAdd(this.state.title, this.state.contents);
+    addPost(e){
+        this.props.createPost(this.state.title, this.state.contents)
         this.resetState();
     }
 
@@ -40,7 +40,7 @@ export default class CreatePost extends React.Component {
         </div>
         <div className={bootstrap['modal-footer']}>
             <button onClick={this.resetState} className={classNames(bootstrap['btn'], bootstrap['btn-default'])} data-dismiss='modal'>Cancel</button>
-            <button onClick={this.doAdd} className={classNames(bootstrap['btn'], bootstrap['btn-primary'])} data-dismiss="modal">Add</button>                     
+            <button onClick={this.addPost} className={classNames(bootstrap['btn'], bootstrap['btn-primary'])} data-dismiss="modal">Add</button>                     
         </div>
     </div>
 </div>
