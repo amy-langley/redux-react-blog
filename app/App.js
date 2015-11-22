@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './App.css'
+import appStyles from './App.css'
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
 import BlogApp from './components/BlogApp.jsx'
 
 export default class App extends React.Component {
@@ -15,11 +16,11 @@ export default class App extends React.Component {
     return (
       <div>
 
-        <div className={styles.app}>Live reload is dope as heck</div>
+        <div className={appStyles.bap}>Live reload is dope as heck</div>
 
-        <div className='container'>
+        <div className={bootstrap.container}>
 
-          <div className="jumbotron jumbotron-primary">
+          <div className={bootstrap.jumbotron}>
             <h1>My Blag</h1>
             <p>Building a simple blog with React.js and Webpack and stuff</p>
           </div>
