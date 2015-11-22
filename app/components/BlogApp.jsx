@@ -14,15 +14,7 @@ export default class BlogApp extends React.Component {
     constructor(props) {
         super(props);
         //this.state = { posts: [{ id: 1, title: 'sample post', contents: 'this is a sample fffff', created: new Date() }]};
-        this.addNewPost = this.addNewPost.bind(this);
         this.removePost = this.removePost.bind(this);
-    }
-
-    addNewPost(title, contents){
-        var posts = this.state.posts.slice();
-        var nextIndex = posts.length ? posts[posts.length-1].id + 1 : 1;
-        posts.push({id: nextIndex, title: title, contents: contents, created: new Date()});
-        this.setState({posts: posts});
     }
 
     removePost(id){
@@ -36,7 +28,7 @@ export default class BlogApp extends React.Component {
         const { blog, dispatch } = this.props;
         return (
             <div>
-                <BlogPostList posts={blog} removePost={this.removePost} {...bindActionCreators(BlogActions, dispatch)} />
+                <BlogPostList posts={blog} {...bindActionCreators(BlogActions, dispatch)} />
                 <CreatePost onAdd={this.addNewPost} {...bindActionCreators(BlogActions, dispatch)} />
             </div>
         );

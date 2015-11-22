@@ -10,7 +10,7 @@ export default function blogReducer(state = postList, action){
 			return addPost(state, action.title, action.contents)
 		break
 		case types.DELETE_POST:
-			return removePost(state, id)
+			return removePost(state, action.id)
 		break
 		default:
 			return postList
