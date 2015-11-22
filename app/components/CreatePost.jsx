@@ -1,4 +1,6 @@
 import React from 'react'
+import classNames from 'classnames'
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
 import styles from '../App.css'
 
 export default class CreatePost extends React.Component {
@@ -28,18 +30,18 @@ export default class CreatePost extends React.Component {
     render(){
         return (
 
-<div className="modal fade" id="addModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
-<div className="modal-dialog">
-    <div className='modal-content'>
-        <div className="modal-header bg-primary"><h4>New Post</h4></div>
-        <div className="modal-body">
-            <input id='postTitle' className="form-control" type="text" onChange={this.handleChange} value={this.state.title} placeholder='Title of Post'/>
+<div className={classNames(bootstrap["modal"], bootstrap["fade"], "modal")} id="addModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div className={classNames(bootstrap["modal-dialog"],'modal-dialog')}>
+    <div className={bootstrap['modal-content']}>
+        <div className={classNames(bootstrap["modal-header"], bootstrap["bg-primary"])}><h4>New Post</h4></div>
+        <div className={bootstrap["modal-body"]}>
+            <input id='postTitle' className={bootstrap["form-control"]} type="text" onChange={this.handleChange} value={this.state.title} placeholder='Title of Post'/>
             <br/>
-            <textarea className='form-control' id='postContents' onChange={this.handleChange} value={this.state.contents} placeholder='Your Post' />
+            <textarea className={bootstrap['form-control']} id='postContents' onChange={this.handleChange} value={this.state.contents} placeholder='Your Post' />
         </div>
-        <div className='modal-footer'>
-            <button onClick={this.resetState} className='btn btn-default' data-dismiss='modal'>Cancel</button>
-            <button onClick={this.doAdd} className='btn btn-primary' data-dismiss="modal">Add</button>                     
+        <div className={bootstrap['modal-footer']}>
+            <button onClick={this.resetState} className={classNames(bootstrap['btn'], bootstrap['btn-default'])} data-dismiss='modal'>Cancel</button>
+            <button onClick={this.doAdd} className={classNames(bootstrap['btn'], bootstrap['btn-primary'])} data-dismiss="modal">Add</button>                     
         </div>
     </div>
 </div>

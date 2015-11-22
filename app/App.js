@@ -3,6 +3,9 @@ import appStyles from './App.css'
 import bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
 import BlogApp from './components/BlogApp.jsx'
 
+import 'jquery/dist/jquery.min.js'
+import 'bootstrap/dist/js/bootstrap.min.js'
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,9 +18,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-
-        <div className={appStyles.bap}>Live reload is dope as heck</div>
-
+        <br/>
         <div className={bootstrap.container}>
 
           <div className={bootstrap.jumbotron}>
