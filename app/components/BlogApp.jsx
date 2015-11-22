@@ -4,12 +4,14 @@ import React from 'react';
 import styles from '../App.css';
 import BlogPostList from './BlogPostList.jsx'
 import CreatePost from './CreatePost.jsx'
+import { connect } from 'react-redux'
 
+@connect(state=>({blog: state.blog}))
 export default class BlogApp extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { posts: [{ id: 1, title: 'sample post', contents: 'this is a sample post', created: new Date() }]};
+        //this.state = { posts: [{ id: 1, title: 'sample post', contents: 'this is a sample fffff', created: new Date() }]};
         this.addNewPost = this.addNewPost.bind(this);
         this.removePost = this.removePost.bind(this);
     }
@@ -29,9 +31,10 @@ export default class BlogApp extends React.Component {
     }
 
     render(){
+        var posts = this.props.blog
         return (
             <div>
-                <BlogPostList posts={this.state.posts} removePost={this.removePost} />
+                <BlogPostList posts={posts} removePost={this.removePost} />
                 <CreatePost onAdd={this.addNewPost}/>
             </div>
         );

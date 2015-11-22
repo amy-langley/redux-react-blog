@@ -6,10 +6,6 @@ import BlogApp from './components/BlogApp.jsx'
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      when: new Date(),
-      sample_posts: [{ id: 3, title: 'sample title', contents: 'sample body' }]
-    };
   }
 
   render() {
