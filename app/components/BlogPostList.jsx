@@ -7,9 +7,6 @@ import styles from '../App.css'
 import bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
 import BlogPost from './BlogPost.jsx'
 
-import { connect } from 'react-redux'
-
-@connect(state=>({blog: state.blog}))
 export default class BlogPostList extends React.Component {
     constructor(props) {
         super(props);

@@ -16,7 +16,6 @@ export default class BlogPost extends React.Component {
     }
 
     render(){
-        console.log(this.props)
         var post = this.props.post;
         const { blog, dispatch } = this.props;
         return (

@@ -9,7 +9,6 @@ export function createPost(title, contents) {
 }
 
 export function deletePost(id) {
-	console.log('go')
 	return {
 		type: types.DELETE_POST,
 		id

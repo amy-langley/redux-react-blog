@@ -1,5 +1,3 @@
-// https://jsfiddle.net/amy_boyer/66jw0xee/
-
 import React from 'react';
 import styles from '../App.css';
 import BlogPostList from './BlogPostList.jsx'
