@@ -10,6 +10,8 @@ export default class BlogApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = { posts: [{ id: 1, title: 'sample post', contents: 'this is a sample post', created: new Date() }]};
+        this.addNewPost = this.addNewPost.bind(this);
+        this.removePost = this.removePost.bind(this);
     }
 
     addNewPost(title, contents){

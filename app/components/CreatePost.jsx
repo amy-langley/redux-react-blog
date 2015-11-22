@@ -5,6 +5,8 @@ export default class CreatePost extends React.Component {
     constructor(props) {
         super(props);
         this.state = { title: '', contents: '' };
+        this.handleChange = this.handleChange.bind(this);
+        this.doAdd = this.doAdd.bind(this);
     }
 
     handleChange(e){

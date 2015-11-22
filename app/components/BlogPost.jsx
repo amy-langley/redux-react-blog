@@ -5,6 +5,7 @@ import TimeSlug from './TimeSlug.jsx'
 export default class BlogPost extends React.Component {
     constructor(props) {
         super(props);
+        this.deletePost = this.deletePost.bind(this);
     }
 
     deletePost(e){
@@ -16,7 +17,7 @@ export default class BlogPost extends React.Component {
         var post = this.props.post;
         return (
             <div className='well blog-post'>
-                <h4 className='pull-right glyphicon glyphicon-trash' onClick={this.deletePost} data-post-id={post.id}></h4>
+                <h4 className='pull-right glyphicon glyphicon-trash' onClick={this.deletePost} data-post-id={post.id}>x</h4>
                 <h4>{post.title}</h4>
                 <p>{post.contents}</p>
                 <small>&mdash;Posted <TimeSlug when={post.created}></TimeSlug></small>
