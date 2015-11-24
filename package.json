@@ -26,6 +26,7 @@
     "jscs": "jscs ."
   },
   "dependencies": {
+    "bootstrap": "^3.3.5",
     "classnames": "^2.2.0",
     "file-loader": "^0.8.4",
     "immutable": "^3.7.5",
