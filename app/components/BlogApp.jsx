@@ -6,27 +6,20 @@ import { bindActionCreators } from 'redux';
 import * as BlogActions from '../actions/BlogActions';
 import { connect } from 'react-redux'
 
-@connect(state=>({blog: state.blog}))
+@connect(state=>({blogstate: state.blogreducer}))
 export default class BlogApp extends React.Component {
 
     constructor(props) {
         super(props);
+        //no need to use local state, redux store is not authoritative
         //this.state = { posts: [{ id: 1, title: 'sample post', contents: 'this is a sample fffff', created: new Date() }]};
-        this.removePost = this.removePost.bind(this);
-    }
-
-    removePost(id){
-        var posts = this.state.posts.filter(function(item){
-            return item.id!=id;
-        });
-        this.setState({posts: posts});
     }
 
     render(){
-        const { blog, dispatch } = this.props;
+        const { blogstate, dispatch } = this.props;
         return (
             <div>
-                <BlogPostList posts={blog} {...bindActionCreators(BlogActions, dispatch)} />
+                <BlogPostList posts={blogstate} {...bindActionCreators(BlogActions, dispatch)} />
                 <CreatePost onAdd={this.addNewPost} {...bindActionCreators(BlogActions, dispatch)} />
             </div>
         );

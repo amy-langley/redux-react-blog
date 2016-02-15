@@ -1,1 +1,1 @@
-export { default as blog } from './BlogReducer.js';
+export { default as blogreducer } from './BlogReducer.js';

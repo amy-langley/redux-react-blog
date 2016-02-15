@@ -21,7 +21,7 @@ export default class BlogPost extends React.Component {
         return (
             <div className={bootstrap.well}>
                 <h4 className={classNames(bootstrap['pull-right'], bootstrap['glyphicon'], bootstrap['glyphicon-trash'])} onClick={this.removePost} data-post-id={post.id}></h4>
-                <h4>{post.title}</h4>
+                <h4>Title: {post.title}</h4>
                 <p>{post.contents}</p>
                 <small>&mdash;Posted <TimeSlug when={post.created}></TimeSlug></small>
             </div>
